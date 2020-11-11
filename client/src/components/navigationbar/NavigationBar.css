@@ -1,0 +1,23 @@
+.navigationBarContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: cornflowerblue;
+}
+
+.home,
+.signIn,
+.profile,
+.recipes,
+.shareyourrecipes {
+    cursor: pointer;
+}
+
+.signIn {
+    grid-column: 10/12;
+    align-self: center;
+}
+
+.profile {
+    grid-column: 10/12;
+    align-self: center;
+}
