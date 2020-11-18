@@ -10,6 +10,7 @@ import UserRoutes from './src/routes/UserRoute.js'
 
 /* Startar inte med nodemon Server.js, 
    startar med npx nodemon */
+   //npm start Server.js
 
 dotenv.config()
 const app = express()

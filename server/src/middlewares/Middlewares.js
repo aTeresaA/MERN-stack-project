@@ -15,7 +15,7 @@ const errorHandler = (error, req, res, next) => {
         statuscode: statuscode, 
         message: error.message, 
         stacktrace: 
-        process.env.ENVIRONMENT === PRODUCTION 
+        process.env.ENVIRONMENT === 'PRODUCTION' 
         ? 'Attans...' 
         : error.stack 
         

@@ -8,7 +8,7 @@ const connectToDatabase = async () => {
     try {
         await 
         mongoose.connect(databaseUrl, 
-        { useNewUrlParser: true, useUnifiedTopology: true })
+        { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
         console.log('framgångsrik kontakt med databasen')        
     } catch (error) {
         console.log('Fel uppstod vid försök till kontakt med databasen', error)
