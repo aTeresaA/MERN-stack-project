@@ -17,19 +17,6 @@ const connectToDatabase = async () => {
    
 }
 
-/*const connectToEdamam = async () => {
-    const app_id = process.env.APP_ID
-    const app_key = process.env.APP_KEY
-    try {
-        mongoose.connect((app_id && app_key),
-        { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
-        console.log('inloggad i Edamam')
-    } catch (err) {
-        console.log('Det gick inte att logga in i Edamam API', error)
-        process.exit()        
-    }
-}*/
-
 const connectToPort = async (app) => {
     const port = process.env.PORT
     try {
@@ -45,6 +32,5 @@ const connectToPort = async (app) => {
 
 export default {
     connectToDatabase,
-    connectToPort,
-    //connectToEdamam
+    connectToPort    
 }
