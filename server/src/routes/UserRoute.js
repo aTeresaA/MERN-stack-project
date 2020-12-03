@@ -1,6 +1,6 @@
 import UserController from '../controllers/UserController.js'
 
-const routes = (app) => {
+const userRoutes = (app) => {
     app.post('/user', UserController.createUser)
     app.get('/user', UserController.getAllUsers)
     app.get('/user/:userId', UserController.getUserById)
@@ -12,5 +12,5 @@ const routes = (app) => {
 }
 
 export default {
-    routes
+    userRoutes
 }

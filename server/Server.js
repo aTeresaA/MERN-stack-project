@@ -7,6 +7,8 @@ import bodyParser from 'body-parser' // use of nested objects
 import middlewares from './src/middlewares/Middlewares.js'
 import Configuration from './config/Configuration.js'
 import UserRoutes from './src/routes/UserRoute.js'
+import RecipeRoutes from './src/routes/RecipeRoute.js'
+import cors from 'cors'
 
 /* Startar inte med nodemon Server.js, 
    startar med npx nodemon */
@@ -18,15 +20,24 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(helmet())
 app.use(morgan('common'))
+app.use(cors())
+//app.use(cors({ credentials: true }))
 
-app.get('/recipe', (req, res) => {
+app.get('/pannkaka', (req, res) => {
     res.send('Pannkakor! Glutenfria pannkakor är lika gott.')
     next()
 })
 
-UserRoutes.routes(app)
+app.get('/cors', (req, res, next) => {
+        res.json({ msg: 'This is CORS-enabled for all origins! Tjohooo!' })
+    })
+
+UserRoutes.userRoutes(app)
+RecipeRoutes.recipeRoutes(app)
 app.use(middlewares.notFound)
 app.use(middlewares.errorHandler)
 
 Configuration.connectToDatabase()
 Configuration.connectToPort(app)
+
+export default app

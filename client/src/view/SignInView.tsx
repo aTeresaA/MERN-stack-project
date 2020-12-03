@@ -22,10 +22,11 @@ export const SignInView = () => {
 
     return (
         <div>
+            <h4>Logga in för att kunna dela med dig av dina recept!</h4><br />
             <span>Användare:</span>
-            <input onChange={e => setUsername(e.target.value)}/><br />
+            <input className="usernamefield" placeholder="Användarnamn" onChange={e => setUsername(e.target.value)}/><br />
             <span>Lösenord:</span>
-            <input type="password" onChange={e => setPassword(e.target.value)}/><br />
+            <input className="passwordfield" placeholder="Lösenord" type="password" onChange={e => setPassword(e.target.value)}/>
             <button onClick={() => logIn()}>Logga in</button>
         </div>
     )

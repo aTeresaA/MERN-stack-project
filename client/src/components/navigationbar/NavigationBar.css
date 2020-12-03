@@ -10,6 +10,9 @@
 .recipes,
 .shareyourrecipes {
     cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 4mm;
 }
 
 .signIn {
@@ -21,3 +24,15 @@
     grid-column: 10/12;
     align-self: center;
 }
+
+/*DESKTOP ABOVE, MOBILE SCREEN BELOW*/
+
+@media screen and (max-width: 500px) {
+
+.navigationBarContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: cornflowerblue;  
+    }
+}
+
