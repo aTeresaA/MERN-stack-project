@@ -42,13 +42,13 @@ app.get('/cors', (req, res, next) => {
         res.json({ msg: 'This is CORS-enabled for all origins! Tjohooo!' })
     })
 
-/*const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080
 
 if(process.env.NODE_ENV === "production") {
-    app.use(express.static("frontend/build"))
-}*/
+    app.use(express.static("client/build"))
+}
 
-app.use(express.static("client/build"))
+//app.use(express.static("client/build"))
 
 UserRoutes.userRoutes(app)
 RecipeRoutes.recipeRoutes(app)
